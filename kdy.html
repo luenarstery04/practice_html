@@ -3,4 +3,36 @@
 <h3> gigabitamin 입니다 </h3>
 <h1>루엔 아스테리는 루에늬 루에닝 뤠니 라는 별명이 있다</h1>
 
+<script>
+    function BMI_Cal() {
+      const height = parseFloat(document.getElementById("height").value) / 100;
+      const weight = parseFloat(document.getElementById("weight").value);
+      
+      if (isNaN(height) || isNaN(weight)) {
+        alert("유효한 값을 입력해주세요.");
+        return;
+      }
+
+      const bmi = weight / (height * height);
+      let category = "";
+
+      if (bmi < 18.5) {
+        category = "저체중";
+      } else if (bmi < 24.9) {
+        category = "정상체중";
+      } else if (bmi < 25.9) {
+        category = "과체중";
+      } else if (bmi < 29.9) {
+        category = "경도비만";
+      } else if (bmi < 34.9) {
+        category = "중증도비만";
+      } else {
+        category = "고도비만";
+      }
+
+      const resultElement = document.getElementById("result");
+      resultElement.textContent = `당신의 BMI 지수는 ${bmi.toFixed(2)}이며, 상태는 "${category}"입니다.`;
+    }
+    </script>
+
 <h4> 10시 13분 </h4>
